@@ -1,0 +1,134 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* === Dashboard Layout === */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(200,220,255,0.6));
+  backdrop-filter: blur(10px);
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-sidebar {
+  width: 240px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(15px);
+  border-right: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+}
+
+.dashboard-sidebar button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  background: rgba(255,255,255,0.7);
+}
+
+.dashboard-sidebar button:hover {
+  background: rgba(255,255,255,0.95);
+  transform: scale(1.03);
+}
+
+.logout-btn {
+  margin-top: auto;
+  background: #ff6b6b !important;
+  color: white;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.dashboard-home {
+  text-align: center;
+  margin-top: 10%;
+  color: #2c3e50;
+}
+
+.section-text {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20%;
+  color: #34495e;
+}
+
+/* Navbar (optional if not styled yet) */
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.navbar h3 {
+  font-weight: 600;
+}
+
+.navbar button {
+  background: #6c63ff;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.navbar button:hover {
+  background: #5147d8;
+}

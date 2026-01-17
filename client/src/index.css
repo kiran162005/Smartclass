@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-3 py-1 sm:px-4 sm:py-2 text-white rounded shadow-md hover:opacity-90 transition;
+  }
+}
+
+/* Optional: add some custom styles */
+body {
+  @apply bg-gray-100;
+}
+
+.btn-tool {
+  @apply flex items-center justify-center w-10 h-10 rounded-md bg-gray-100 hover:bg-gray-200 transition;
+}

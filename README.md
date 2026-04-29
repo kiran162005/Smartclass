@@ -131,7 +131,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 ### Start Backend Server
 
 ```bash
-cd backend
+cd server
 npm start
 ```
 
@@ -140,7 +140,7 @@ Server runs on: `http://localhost:5000`
 ### Start Frontend Development Server
 
 ```bash
-cd frontend
+cd client
 npm run dev
 ```
 

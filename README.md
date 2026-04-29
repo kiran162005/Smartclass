@@ -30,7 +30,7 @@ A comprehensive full-stack web application for virtual learning with real-time c
 - **Feedback System**: Send feedback to teachers
 - **Announcements**: Stay updated with class notifications
 
-### 🤖 AI Features (Gemini Integration)
+### 🤖 AI Features (Groq Integration)
 - **AI Chat Assistant**: Context-aware responses for educational queries
 - **Essay Generator**: Auto-generate structured essays on any topic
 - **Study Notes Creator**: Generate organized study notes

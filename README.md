@@ -213,7 +213,7 @@ smartclass/
 - Navigate to "Teaching Canvas"
 - Click **"Go Live"** button (turns red)
 - Use drawing tools:
-  - **Brush**: Draw freehand
+  - **Brush**: Draw freehand 
   - **Eraser**: Remove drawings
   - **Text**: Add text annotations
   - **Speech-to-Text**: Click mic icon to dictate

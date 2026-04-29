@@ -88,7 +88,7 @@ cd smartclass
 ### 2. Install Backend Dependencies
 
 ```bash
-cd backend
+cd server
 npm install
 ```
 

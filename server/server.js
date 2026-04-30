@@ -9,7 +9,7 @@ import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import Groq from "groq-sdk";
 import natural from 'natural';
 import compromise from 'compromise';
 import Sentiment from 'sentiment';
@@ -24,12 +24,12 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error("❌ GEMINI_API_KEY missing in .env");
+if (!process.env.GROQ_API_KEY) {
+  console.error("❌ GROQ_API_KEY missing in .env");
   process.exit(1);
 }
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY.trim();
-const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const GROQ_API_KEY = process.env.GROQ_API_KEY.trim();
+const groq = new Groq({ apiKey: GROQ_API_KEY });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -204,30 +204,35 @@ app.put("/auth/profile/:userId", async (req, res) => {
   }
 });
 
-// ================== AI CHAT (Gemini) ==================
+// ================== AI CHAT (Groq) ==================
 app.get("/ai/test", async (_, res) => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const response = await (await model.generateContent("Say hello")).response;
-    res.json({ success: true, testResponse: response.text() });
+    const chatCompletion = await groq.chat.completions.create({
+      messages: [{ role: "user", content: "Say hello" }],
+      model: "llama-3.3-70b-versatile",
+    });
+    res.json({ success: true, testResponse: chatCompletion.choices[0]?.message?.content });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
-app.post("/ai/chat", async (req, res) => {
+app.post("/ai/chat", upload.single('file'), async (req, res) => {
   try {
     const { message, userId, userName } = req.body;
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const chat = model.startChat({
-      history: [
-        { role: "user", parts: [{ text: "You are a helpful AI assistant for a classroom." }] },
-        { role: "model", parts: [{ text: "Hello! How can I help you today?" }] },
+    
+    const chatCompletion = await groq.chat.completions.create({
+      messages: [
+        { role: "system", content: "You are a helpful AI assistant for a classroom." },
+        { role: "user", content: message }
       ],
-      generationConfig: { maxOutputTokens: 1000, temperature: 0.7 },
+      model: "llama-3.3-70b-versatile",
+      temperature: 0.7,
+      max_tokens: 1000,
     });
-    const result = await chat.sendMessage(message);
-    const reply = (await result.response).text();
+    
+    const reply = chatCompletion.choices[0]?.message?.content || "No response";
+    
     await ChatHistory.create({ userId, userName, message, reply });
     res.json({ reply });
   } catch (err) {

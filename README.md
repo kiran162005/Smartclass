@@ -39,7 +39,7 @@ A comprehensive full-stack web application for virtual learning with real-time c
 - **Document Processing**: Upload PDFs/DOCX for AI analysis
 - **Quiz Generation**: Create quizzes from uploaded documents
 
-> **Note**: AI features use a combination of Google Gemini API (for chat) and local knowledge base/algorithms (for document processing and text generation). Some features may have pre-loaded responses.
+> **Note**: AI features use a combination of Groq API (for chat) and local knowledge base/algorithms (for document processing and text generation). Some features may have pre-loaded responses.
 
 ---
 
@@ -60,7 +60,7 @@ A comprehensive full-stack web application for virtual learning with real-time c
 - **Socket.io** for WebSockets
 - **Multer** for file uploads
 - **bcryptjs** for password hashing
-- **Google Gemini API** for AI chat
+- **Groq API** for AI chat
 - **Natural NLP** for text processing
 - **PDF-Parse** & **Mammoth** for document reading
 
@@ -72,7 +72,7 @@ Before you begin, ensure you have:
 
 - **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
 - **MongoDB** (local or Atlas) - [Download](https://www.mongodb.com/try/download/community)
-- **Google Gemini API Key** (optional for AI chat) - [Get Key](https://makersuite.google.com/app/apikey)
+- **Groq API Key** (optional for AI chat) - [Get Key](https://console.groq.com/keys)
 
 ---
 
@@ -110,16 +110,16 @@ MONGO_URI=mongodb://localhost:27017/smartclass
 # Server Port
 PORT=5000
 
-# Google Gemini API Key (Optional - for AI chat)
-GEMINI_API_KEY=your_gemini_api_key_here
+# Groq API Key (Optional - for AI chat)
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
 **Getting MongoDB URI:**
 - **Local MongoDB**: `mongodb://localhost:27017/smartclass`
 - **MongoDB Atlas**: Get connection string from Atlas dashboard
 
-**Getting Gemini API Key:**
-1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+**Getting Groq API Key:**
+1. Visit [Groq Console](https://console.groq.com/keys)
 2. Sign in with Google account
 3. Click "Create API Key"
 4. Copy and paste into `.env`
@@ -293,7 +293,7 @@ Example Prompts:
 - "How do variables work in JavaScript?"
 ```
 
-**Current Implementation**: Uses Gemini API for conversational responses.
+**Current Implementation**: Uses Groq API for conversational responses.
 
 ### Text Generator
 - **Essay**: Generates 400-600 word essays
@@ -380,9 +380,9 @@ PORT=3000
 - Allowed formats: PDF, DOC, DOCX, TXT, ZIP, RAR
 
 ### AI Chat Not Working
-- Verify `GEMINI_API_KEY` in `.env`
-- Check API quota at [Google AI Studio](https://makersuite.google.com)
-- AI chat requires valid Gemini API key
+- Verify `GROQ_API_KEY` in `.env`
+- Check API quota at [Groq Console](https://console.groq.com)
+- AI chat requires valid Groq API key
 
 ### Frontend Can't Connect
 - Check backend is running on port 5000
@@ -398,7 +398,7 @@ PORT=3000
 2. Connect GitHub repository
 3. Add environment variables:
    - `MONGO_URI`
-   - `GEMINI_API_KEY`
+   - `GROQ_API_KEY`
    - `PORT`
 4. Deploy from main branch
 
@@ -420,7 +420,7 @@ const BASE_URL = "https://your-backend-url.com";
 | Live Canvas | ✅ Working | Real-time via Socket.io |
 | Assignments | ✅ Working | Full CRUD + grading |
 | File Upload | ✅ Working | 10MB limit |
-| AI Chat | ❌ Not Working | Requires Gemini API key(Not connected) |
+| AI Chat | ❌ Not Working | Requires Groq API key(Not connected) |
 | Text Generator | ⚠️ Partial | Uses local knowledge base |
 | Document Quiz | ⚠️ Partial | Rule-based generation |
 | Announcements | ✅ Working | Real-time updates |
@@ -453,7 +453,7 @@ const BASE_URL = "https://your-backend-url.com";
 
 ## 🙏 Acknowledgments
 
-- [Google Gemini AI](https://ai.google.dev/) for AI capabilities
+- [Groq AI](https://groq.com/) for AI capabilities
 - [MongoDB](https://www.mongodb.com/) for database
 - [Socket.io](https://socket.io/) for real-time features
 - [React](https://react.dev/) and [Vite](https://vitejs.dev/) communities

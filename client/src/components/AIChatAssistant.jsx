@@ -29,7 +29,7 @@ const AIChatAssistant = ({ user }) => {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "👋 Hello! I'm your AI assistant powered by Gemini. How can I help you today?",
+      text: "👋 Hello! I'm your AI assistant powered by Groq. How can I help you today?",
       timestamp: new Date(),
     },
   ]);
@@ -140,7 +140,7 @@ const AIChatAssistant = ({ user }) => {
               <h2 className="text-xl font-bold">AI Assistant</h2>
               <p className="text-xs text-indigo-100 flex items-center gap-1">
                 <Sparkles size={12} />
-                Powered by Gemini
+                Powered by Groq
               </p>
             </div>
           </div>

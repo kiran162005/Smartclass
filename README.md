@@ -411,3 +411,35 @@ PORT=3000
 const BASE_URL = "https://your-backend-url.com";
 ```
 
+---
+
+## 📊 Features Status
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Live Canvas | ✅ Working | Real-time via Socket.io |
+| Assignments | ✅ Working | Full CRUD + grading |
+| File Upload | ✅ Working | 10MB limit |
+| AI Chat | ❌ Not Working | Requires Groq API key(Not connected) |
+| Text Generator | ⚠️ Partial | Uses local knowledge base |
+| Document Quiz | ⚠️ Partial | Rule-based generation |
+| Announcements | ✅ Working | Real-time updates |
+| Doubt Chat | ✅ Working | Real-time messaging |
+| Feedback | ✅ Working | Teacher notifications |
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] Video conferencing integration (Zoom/Meet API)
+- [ ] Mobile app (React Native)
+- [ ] Advanced analytics dashboard
+- [ ] Attendance tracking
+- [ ] Grade book and report cards
+- [ ] Parent portal
+- [ ] Calendar integration
+- [ ] Push notifications
+- [ ] Multi-language support
+
+---
+

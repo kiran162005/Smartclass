@@ -443,3 +443,24 @@ const BASE_URL = "https://your-backend-url.com";
 
 ---
 
+## 👨‍💻 Author
+
+**Kiran T**
+- GitHub: [@kiran162005](https://github.com/kiran162005)
+- LinkedIn: [Kiran T](linkedin.com/in/kiran-t-30159135a/)
+
+---
+
+## 🙏 Acknowledgments
+
+- [Groq AI](https://groq.com/) for AI capabilities
+- [MongoDB](https://www.mongodb.com/) for database
+- [Socket.io](https://socket.io/) for real-time features
+- [React](https://react.dev/) and [Vite](https://vitejs.dev/) communities
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+---
+
+
+
+⭐ **If you found this project helpful, please star the repository!**

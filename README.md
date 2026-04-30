@@ -391,3 +391,14 @@ PORT=3000
 
 ---
 
+## 🚀 Deployment
+
+### Backend (Railway/Render/Heroku)
+1. Create new project
+2. Connect GitHub repository
+3. Add environment variables:
+   - `MONGO_URI`
+   - `GROQ_API_KEY`
+   - `PORT`
+4. Deploy from main branch
+

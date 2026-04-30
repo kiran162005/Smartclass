@@ -402,3 +402,12 @@ PORT=3000
    - `PORT`
 4. Deploy from main branch
 
+### Frontend (Vercel/Netlify)
+1. Connect GitHub repository
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+4. Update API URLs in `frontend/src/services/api.js`:
+```javascript
+const BASE_URL = "https://your-backend-url.com";
+```
+

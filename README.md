@@ -420,7 +420,7 @@ const BASE_URL = "https://your-backend-url.com";
 | Live Canvas | ✅ Working | Real-time via Socket.io |
 | Assignments | ✅ Working | Full CRUD + grading |
 | File Upload | ✅ Working | 10MB limit |
-| AI Chat | ❌ Not Working | Requires Groq API key(Not connected) |
+| AI Chat | ✅ Working | Requires Groq API key(Connected) |
 | Text Generator | ⚠️ Partial | Uses local knowledge base |
 | Document Quiz | ⚠️ Partial | Rule-based generation |
 | Announcements | ✅ Working | Real-time updates |

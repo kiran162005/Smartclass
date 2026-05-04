@@ -421,7 +421,7 @@ const BASE_URL = "https://your-backend-url.com";
 | Assignments | ✅ Working | Full CRUD + grading |
 | File Upload | ✅ Working | 10MB limit |
 | AI Chat | ✅ Working | Requires Groq API key(Connected) |
-| Text Generator | ⚠️ Partial | Uses local knowledge base |
+| Text Generator | ✅ Working | Uses local knowledge base and groq API|
 | Document Quiz | ⚠️ Partial | Rule-based generation |
 | Announcements | ✅ Working | Real-time updates |
 | Doubt Chat | ✅ Working | Real-time messaging |
